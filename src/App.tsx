@@ -1,19 +1,25 @@
-import React from 'react'
-import Home from './pages/home/Home'
-import Contador from './pages/home/Contador'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import './App.css'
+import Footer from './components/footer/Footer'
+import Navbar from './components/navbar/Navbar'
+//import Home from './pages/home/Home'
+import Cadastro from './pages/cadastro/Cadastro'
 
-const App = () => {
+function App() {
   return (
-   
-<>
-
-<Home/>
-<Contador/>
-</>
-
-
-
-
+    <>
+        <BrowserRouter>
+          <Navbar />
+          <div className="min-h-100vh]">
+            <Routes>
+              {/* <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} /> */}
+              <Route path="/cadastrar" element={<Cadastro />} />
+            </Routes>
+          </div>
+          <Footer />
+        </BrowserRouter>
+    </>
   )
 }
 
