@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import Usuario from '../../models/Usuario'
 import { cadastrarUsuario } from '../../services/Service'
 import './Cadastro.css'
+import '../../App.css'
 import { RotatingLines } from 'react-loader-spinner'
 
 function Cadastro() {
