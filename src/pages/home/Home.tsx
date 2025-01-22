@@ -1,29 +1,39 @@
-import { useContext } from 'react';
- 
-import { Link } from 'react-router-dom';
-import { UserContext } from '../../contexts/UserContext';
+import ListaPostagens from "../../components/postagens/listapostagens/ListaPostagens"
+import ModalPostagem from "../../components/postagens/modalpostagem/ModalPostagem"
 
 function Home() {
+    return (
+        <>
+            <div className="bg-indigo-900 flex justify-center">
+                <div className='container grid grid-cols-2 text-white'>
+                    <div className="flex flex-col gap-4 items-center justify-center py-4">
+                        <h2 className='text-5xl font-bold'>
+                            Seja Bem Vinde!
+                        </h2>
+                        <p className='text-xl'>
+                            Expresse aqui seus pensamentos e opniões
+                        </p>
 
-  const { nome } = useContext(UserContext);
+                        <div className="flex justify-around gap-4">
+                            <div className="flex justify-around gap-4">
+                                <ModalPostagem />
+                            </div>
+                        </div>
+                    </div>
 
-  return (
-    <div className="container flex flex-col items-center justify-center min-h-screen">
-    <div className="text-center">
-      <h1 className="text-2xl font-bold mb-4"> Usuário: <span>{nome}</span></h1>
-      <h2 className="text-lg mb-6">Seja Bem Vinde </h2>
-      <Link 
-        to="/login" 
-        className="botao bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-      >
-        Voltar
-      </Link>
-    </div>
-  </div>
-  
-  );
+                    <div className="flex justify-center ">
+                        <img
+                            src="https://i.imgur.com/fyfri1v.png"
+                            alt="Imagem Página Home"
+                            className='w-2/3'
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <ListaPostagens />
+        </>
+    )
 }
 
-export default Home;
-
-
+export default Home
